@@ -1,16 +1,23 @@
-package step_1;
+package step2_if;
 
 import java.util.Scanner;
 
-public class No_1001 {
+public class No_1330 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int a, b;
-		
+
 		a = sc.nextInt();
 		b = sc.nextInt();
+
+		if (a > b) {
+			System.out.println(">");
+		} else if (a < b) {
+			System.out.println("<");
+		} else {
+			System.out.println("==");
+		}
 		
-		System.out.println(a-b);
 		sc.close();
 	}
 }

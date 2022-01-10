@@ -1,4 +1,4 @@
-package step_1;
+package step1_InputOutput;
 
 public class No_10172 {
 	public static void main(String[] args) {

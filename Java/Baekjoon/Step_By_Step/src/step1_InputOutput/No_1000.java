@@ -1,17 +1,16 @@
-package step_2;
+package step1_InputOutput;
 
 import java.util.Scanner;
 
-public class No_2753 {
+public class No_1000 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int a, result;
-
+		int a, b;
+		
 		a = sc.nextInt();
-
-		result = (a%4==0)&&(a%100!=0)||(a%400==0) ? 1 : 0;
-		System.out.println(result);
-
+		b = sc.nextInt();
+		
+		System.out.println(a+b);
 		sc.close();
 	}
 }
