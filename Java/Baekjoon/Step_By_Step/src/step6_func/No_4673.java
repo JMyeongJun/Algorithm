@@ -13,19 +13,18 @@ public class No_4673 {
 	}
 
 	public static void main(String[] args) {
-				
-		for(int i = 1; i<10000; i++) {
-			
-			boolean chk = false;
-			
-			for(int j = 1; j<10000; j++) {
-				if(i == d(j)) {
-					chk = true;
-					break;
-				}
+		boolean[] selfCheck = new boolean[10001];
+
+		for (int i = 1; i <= 10000; i++) {
+			int n = d(i);
+
+			if (n <= 10000) {
+				selfCheck[d(i)] = true;
 			}
-			
-			if(!chk) {
+		}
+		
+		for(int i = 1; i<=10000; i++) {
+			if(!selfCheck[i]) {
 				System.out.println(i);
 			}
 		}
