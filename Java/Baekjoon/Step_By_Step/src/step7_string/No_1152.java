@@ -11,5 +11,7 @@ public class No_1152 {
 		
 		StringTokenizer st = new StringTokenizer(br.readLine()," ");
 		System.out.println(st.countTokens());
+		
+		br.close();
 	}
 }
