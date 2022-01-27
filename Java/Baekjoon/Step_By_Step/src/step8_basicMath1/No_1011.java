@@ -3,12 +3,11 @@ package step8_basicMath1;
 import java.util.Scanner;
 
 public class No_1011 {
+	
+	// 등차수열의 합, 공차 = 1
+	// n(n+1)/2
 	static int sum(int num) {
-		int ret = 0;
-		for(int i = 1; i<= num; i++) {
-			ret += i;
-		}
-		return ret;
+		return num * (num +1) / 2;
 	}
 	
 	public static void main(String[] args) {
@@ -30,7 +29,7 @@ public class No_1011 {
 					k++;
 				}else if(dist < sum(k)) {
 //					System.out.println("k--");
-					System.out.println(cnt);
+//					System.out.println(cnt);
 					k--;
 				}else {
 //					System.out.println("k+0");
@@ -39,7 +38,7 @@ public class No_1011 {
 				cnt++;
 //				System.out.println("---------------");
 			}
-			System.out.println("cnt = " + cnt);
+			System.out.println(cnt);
 		}
 		
 		sc.close();
