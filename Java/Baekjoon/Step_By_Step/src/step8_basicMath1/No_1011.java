@@ -1,38 +1,43 @@
 package step8_basicMath1;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
 
 public class No_1011 {
-	
-	// 등차수열의 합, 공차 = 1
-	// n(n+1)/2
-	static int sum(int num) {
-		return num * (num +1) / 2;
-	}
-	
-	public static void main(String[] args) throws InterruptedException {
-		Scanner sc = new Scanner(System.in);
-		int t = sc.nextInt();
-		
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+		int t = Integer.parseInt(br.readLine());
+
 		for (int i = 0; i < t; i++) {
-			int x = sc.nextInt(), y = sc.nextInt(), k = 1;
-			int dist = y - x, cnt = 0;
-			System.out.println("dist : " + dist);
-			
-			while(dist != 0) {
-				dist -= k;
-				cnt++;
-				
-				if(dist >= sum(k+1)) {
-					k++;
-				}else if(dist < sum(k)) {
-					k--;
-				}
+			StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+
+			int x = Integer.parseInt(st.nextToken());
+			int y = Integer.parseInt(st.nextToken());
+
+			int dist = y - x;	// 거리
+			int cnt = 0;	// 횟수
+
+			int max = (int) Math.sqrt(dist);	// 거리의 제곱근 소수점 제외
+
+			if (dist == max * max) {
+				cnt = max * 2 - 1;
+			} else if (dist <= max * max + max) {
+				cnt = max * 2;
+			} else {
+				cnt = max * 2 + 1;
 			}
-			
-			System.out.println(cnt);
+
+			bw.write(cnt + "\n");
 		}
-		
-		sc.close();
+		bw.flush();
+
+		bw.close();
+		br.close();
 	}
 }
