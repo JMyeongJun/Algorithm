@@ -1,27 +1,27 @@
 package main;
 
-import bubbleSort.BubbleSort;
+import sort.BubbleSort;
+import sort.SelectionSort;
 
 public class Main {
 
-	public static void printArr(int[] arr) {
-		System.out.print("[");
-		for(int i = 0; i < arr.length; i++) {
-			System.out.print(i);
-			if(i != arr.length-1) {
-				System.out.print(", ");
-			}
-		}
-		System.out.println("]");
-	}
-	
 	public static void main(String[] args) {
+		
+		int[] arr = new int[20];
+		Util.initArr(arr);
+		
+		System.out.println("BubbleSort");
+		Util.shuffleArr(arr);
+		Util.printArr(arr);
+		Util.printArr(BubbleSort.sort(arr));
+		
+		System.out.println();
 
-		int[] arr = { 0, 1, 2, 3, 4 };
-		BubbleSort.sort(arr);
-		printArr(arr);
+		System.out.println("SelectionSort");
+		Util.shuffleArr(arr);
+		Util.printArr(arr);
+		Util.printArr(SelectionSort.sort(arr));
+		
 
 	}
-	
-	
 }
