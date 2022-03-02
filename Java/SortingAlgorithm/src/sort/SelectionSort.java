@@ -2,7 +2,7 @@ package sort;
 
 import main.Util;
 
-public class SelectionSort {
+public class SelectionSort implements Sort{
 	/*
 	 * 버블 정렬이 비교하고 바로 바꿔 넣는 걸 반복한다면 
 	 * 이쪽은 일단 1번째부터 끝까지 훑어서 가장 작은 게 1번째, 
@@ -14,7 +14,8 @@ public class SelectionSort {
 	 * 또한, 버블 정렬보다 두 배 정도 빠르다
 	 */
 	
-	public static int[] sort(int[] arr) {
+	@Override
+	public int[] sort(int[] arr) {
 		for(int i = 0; i < arr.length; i++) {
 			
 			int min_index = i;

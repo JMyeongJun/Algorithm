@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Util {
 
-	public static void printArr(int[] arr) {
+	static void printArr(int[] arr) {
 		System.out.print("[");
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i]);
@@ -15,13 +15,13 @@ public class Util {
 		System.out.println("]");
 	}
 
-	public static void initArr(int[] arr) {
+	static void initArr(int[] arr) {
 		for (int i = 0; i < arr.length; i++) {
 			arr[i] = i + 1;
 		}
 	}
 
-	public static void shuffleArr(int[] arr) {
+	static void shuffleArr(int[] arr) {
 		Random rand = new Random();
 
 		for (int i = 0; i < arr.length; i++) {
