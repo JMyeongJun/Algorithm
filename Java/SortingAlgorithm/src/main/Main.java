@@ -8,33 +8,33 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		final int N = 200;
+		final int N = 5;
 		int[] arr = new int[N];
-		Util.initArr(arr);
+		Util.createArr(arr);
 		
 		BubbleSort bubbleSort = new BubbleSort();
 		SelectionSort selectionSort = new SelectionSort();
 		InsertionSort insertionSort = new InsertionSort();
 		
-//		
-//		System.out.println("BubbleSort");
-//		Util.shuffleArr(arr);
-//		Util.printArr(arr);
-//		Util.printArr(bubbleSort.sort(arr));
-//		
-//		System.out.println();
-//
-//		System.out.println("SelectionSort");
-//		Util.shuffleArr(arr);
-//		Util.printArr(arr);
-//		Util.printArr(selectionSort.sort(arr));
-//		
+		
+		System.out.println("BubbleSort");
+		Util.printArr(arr);
+		Util.printArr(bubbleSort.sort(arr));
+		
 		System.out.println();
+		Util.createArr(arr);
+
+		System.out.println("SelectionSort");
+		Util.printArr(arr);
+		Util.printArr(selectionSort.sort(arr));
+		
+		System.out.println();
+		Util.createArr(arr);
 		
 		System.out.println("InsertionSort");
-		Util.shuffleArr(arr);
 		Util.printArr(arr);
 		Util.printArr(insertionSort.sort(arr));
+		
 		
 
 	}

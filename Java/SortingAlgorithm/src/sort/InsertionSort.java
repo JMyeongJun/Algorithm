@@ -16,17 +16,6 @@ public class InsertionSort implements Sort{
 	public int[] sort(int[] arr) {
 
 		for (int i = 1; i < arr.length; i++) {
-//			int ind = i;
-//			for (int j = ind - 1; (arr[j] > arr[ind]) && j != -1 && ind != 0; j--) {
-//					Util.swap(arr, ind, j);
-//					ind--;
-//			}
-//			for (int j = ind - 1; j >= 0; j--) {
-//				if(arr[j] > arr[ind]) {
-//					Util.swap(arr, ind, j);
-//				}
-//				ind--;
-//			}
 			for (int j = i; j >= 1; j--) {
 				if(arr[j] < arr[j-1]) {
 					Util.swap(arr, j, j-1);
