@@ -15,32 +15,48 @@ public class No_1929 {
 		int m = sc.nextInt(), n = sc.nextInt();
 		sc.close();
 
-		LinkedHashMap<Integer, Integer> map = new LinkedHashMap<Integer, Integer>();
-
-		// map 초기화
-		for (int i = m; i <= n; i++) {
-			if (i == 1) {
-				continue;
-			}
-			map.put(i, i);
-		}
-
-		// 소수아닌 값 제거
-		for (int i = 2; (i * i) <= n; i++) {
-			for (int j = i + 1; j <= n; j++) {
-				if (map.get(j) == null) {
-					continue;
+//		LinkedHashMap<Integer, Integer> map = new LinkedHashMap<Integer, Integer>();
+//
+//		// map 초기화
+//		for (int i = m; i <= n; i++) {
+//			if (i == 1) {
+//				continue;
+//			}
+//			map.put(i, i);
+//		}
+//
+//		// 소수아닌 값 제거
+//		for (int i = 2; (i * i) <= n; i++) {
+//			if (map.get(i) == null) {
+//				continue;
+//			}
+//			for (int j = i * i; j <= n; j += i) {
+//				if (map.get(j) == null) {
+//					continue;
+//				}
+//				map.remove(j);
+//			}
+//		}
+//
+//		// 출력
+//		for (Iterator<Integer> iterator = map.keySet().iterator(); iterator.hasNext();) {
+//			Integer key = iterator.next();
+//			System.out.println(map.get(key));
+//		}
+		
+		int[] arr = new int[n + 1];
+		
+		for(int i = 2; (i * i) <= n; i++) {
+			if(arr[i] != 0) {
+				for(int j = i * i; j <= n; j += i) {
+					arr[j] = 0;
 				}
-				if (map.get(j) % i == 0) {
-					map.remove(j);
-				}
 			}
 		}
-
-		// 출력
-		for(Iterator<Integer> iterator = map.keySet().iterator(); iterator.hasNext();) {
-			Integer key = iterator.next();
-			System.out.println(map.get(key));
+		
+		for(int i = m; i <= n; i++) {
+				System.out.println(arr[i]);
 		}
+		
 	}
 }
